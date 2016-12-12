@@ -1,1 +1,2 @@
-# PHP_Docker_Dev_Environment
+# PHP Docker Dev Environment
+Uses Docker-compose for creating a LAMP stack
