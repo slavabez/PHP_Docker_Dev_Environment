@@ -7,7 +7,7 @@ services:
       - "8080:80"
       - "8443:443"
     volumes:
-      - ./public:/var/www/html
+      - ./www:/var/www
     links:
       - db
 
