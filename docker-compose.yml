@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  php:
+    build: ./php_docker
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./public:/var/www/html
+    links:
+      - db
+
+  db:
+    build: ./mysql_docker
+    volumes:
+      - ./sqldata:/var/lib/mysql
+    ports:
+      - "3306:3306"
