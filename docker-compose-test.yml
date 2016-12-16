@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  php:
+    build:
+      context: ./
+      dockerfile: php-apache-test.dockerfile
+    volumes:
+      - ./public:/var/www/html
+    depends_on:
+      - db
+    command:
+      - phpunit
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - ./sqldata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=database
