@@ -6,7 +6,7 @@ services:
       context: ./
       dockerfile: php-apache-test.dockerfile
     volumes:
-      - ./public:/var/www/html
+      - ./www:/var/www/html
     depends_on:
       - db
     command:

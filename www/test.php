@@ -20,5 +20,7 @@ echo "Connected to MySQL<br />";
 
 ?>
 
-<h2>PHP ini</h2>
+<h2>PHP info</h2>
+
+<?php phpinfo();
 
