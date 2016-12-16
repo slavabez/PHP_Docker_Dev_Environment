@@ -21,5 +21,10 @@ RUN groupmod -g 1000 www-data
 
 RUN a2enmod rewrite
 
+RUN apt-get -y install libtidy-dev \
+    	&& docker-php-ext-install tidy
 
+RUN usermod -u 1000 www-data
+RUN usermod -G staff www-data
 
+COPY php.ini /usr/local/etc/php/
