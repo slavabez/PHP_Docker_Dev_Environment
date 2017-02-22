@@ -28,6 +28,10 @@ Use this project to quickly get started with a new PHP site using Docker contain
 
 5. Navigate to http://localhost/test.php or https://localhost/test.php
 
+6. Your PHP files go into the `/www/` directory. You should find the test.php file there already
+
+7. The MySQL database can be accessed on localhost:3306 using an external app such as MySQL Workbench. The database files are stored locally in `/sqldata/`. To disable that uncomment the `volumes:  - ./sqldata:/var/lib/mysql` line from the `docker-compose.yml` file(s)
+
 ### Bash scripts:
 
 * build_and_deploy.sh - Runs a docker-compose command to rebuild and start the docker containers as listed in the docker-compose.yml 
