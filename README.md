@@ -1,6 +1,6 @@
-## PHP Docker environment tailored for SilverStripe
+## PHP Docker environment tailored for PHP
 
-Use this boilerplate to quickly get started with a new SilverStripe site using Docker containers. Also works for other PHP 5.6 sites
+Use this project to quickly get started with a new PHP site using Docker containers. For SilverStripe development, use the "silverstripe" branch.
 
 ### Requirements
 

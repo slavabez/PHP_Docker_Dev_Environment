@@ -44,9 +44,6 @@ RUN usermod -G staff www-data
 # Copy the php.ini file
 COPY apache_files/php.ini /usr/local/etc/php/
 
-# Copy the SilverStripe Environment file into the directory above
-COPY apache_files/_ss_environment.php /var/www/
-
 # Create a directory for self-generated SSL keys
 RUN mkdir /sslkeys
 
