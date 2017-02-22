@@ -4,18 +4,20 @@ services:
   php:
     build:
       context: ./
-      dockerfile: dockerfiles/php-apache-test.dockerfile
+      dockerfile: dockerfiles/php-apache-https.dockerfile
+    ports:
+      - "443:443"
     volumes:
       - ./www:/var/www/html
-    depends_on:
+    links:
       - db
-    command:
-      - phpunit
 
   db:
     image: mysql:5.7
     volumes:
       - ./sqldata:/var/lib/mysql
+    ports:
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=database

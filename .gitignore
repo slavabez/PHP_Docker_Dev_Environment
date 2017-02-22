@@ -2,9 +2,7 @@
 *.iml
 sqldata
 .editorconfig
-.gitignore
 .htaccess
-README.md
 assets/
 cms/
 composer.json
