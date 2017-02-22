@@ -4,7 +4,7 @@ services:
   php:
     build:
       context: ./
-      dockerfile: php-apache.dockerfile
+      dockerfile: dockerfiles/php-apache.dockerfile
     ports:
       - "80:80"
     volumes:
@@ -21,11 +21,3 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=database
-
-# Uncomment if sass compilation is needed
-#  scss_watch:
-#    build:
-#      context: ./
-#      dockerfile: scss.dockerfile
-#    volumes:
-#      - ./public/themes/cars/css:/app/scss

@@ -10,5 +10,5 @@ define('SS_DATABASE_PASSWORD', 'root');
 define('SS_DATABASE_NAME', 'database');
 
 /* Configure a default username and password to access the CMS on all sites in this environment. */
-define('SS_DEFAULT_ADMIN_USERNAME', 'slava');
-define('SS_DEFAULT_ADMIN_PASSWORD', 'slava');
+define('SS_DEFAULT_ADMIN_USERNAME', 'admin');
+define('SS_DEFAULT_ADMIN_PASSWORD', 'admin');

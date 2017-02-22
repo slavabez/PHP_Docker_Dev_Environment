@@ -1,5 +1,10 @@
+# Use 5.6 php image with apache
 FROM php:5.6-apache
+
+# Install mysqli PHP drivers
 RUN docker-php-ext-install mysqli
+
+# Install a collection of useful plugins
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
         && DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y \
         && DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -17,14 +22,19 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
         && docker-php-ext-install mbstring \
         && docker-php-ext-install json
 
+# Make sure the www-data permissions work
 RUN groupmod -g 1000 www-data
 
-RUN a2enmod rewrite
-
+# Install Tidy (Advised for Silverstripe)
 RUN apt-get -y install libtidy-dev \
     	&& docker-php-ext-install tidy
 
+# Making sure permissions are ok
 RUN usermod -u 1000 www-data
 RUN usermod -G staff www-data
 
-COPY php.ini /usr/local/etc/php/
+# Copy the php.ini file
+COPY apache_files/php.ini /usr/local/etc/php/
+
+# Copy the SilverStripe Environment file into the directory above 
+COPY apache_files/_ss_environment.php /var/www/
