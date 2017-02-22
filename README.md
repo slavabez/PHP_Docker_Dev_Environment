@@ -39,4 +39,5 @@ Use this boilerplate to quickly get started with a new SilverStripe site using D
 ### Coming later: 
 
 * Composer integration - still need to figure out how to add that properly
+
 * Travis integration
