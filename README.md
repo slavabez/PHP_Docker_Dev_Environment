@@ -24,13 +24,15 @@ Use this project to quickly get started with a new PHP site using Docker contain
 
 4. Ports are specified in the docker-compose.yml files, feel free to change them from the default 80:80 (or 443:443)
 
-4. If everything went well, you should see the log output from the docker containers
+5. If everything went well, you should see the log output from the docker containers
 
-5. Navigate to http://localhost/test.php or https://localhost/test.php
+6. Navigate to http://localhost/test.php or https://localhost/test.php
 
-6. Your PHP files go into the `/www/` directory. You should find the test.php file there already
+7. Your PHP files go into the `/www/` directory. You should find the test.php file there already
 
-7. The MySQL database can be accessed on localhost:3306 using an external app such as MySQL Workbench. The database files are stored locally in `/sqldata/`. To disable that uncomment the `volumes:  - ./sqldata:/var/lib/mysql` line from the `docker-compose.yml` file(s)
+8. MySQL username and password are both `root` by default. To change the root password or default database/schema name - alter the `docker-compose.yml` file(s) under the `environment` section
+
+9. The MySQL database can be accessed on localhost:3306 using an external app such as MySQL Workbench. The database files are stored locally in `/sqldata/`. To disable that uncomment the `volumes:  - ./sqldata:/var/lib/mysql` line from the `docker-compose.yml` file(s)
 
 ### Bash scripts:
 
