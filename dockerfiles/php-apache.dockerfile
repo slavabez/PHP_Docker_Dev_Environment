@@ -35,3 +35,14 @@ RUN usermod -G staff www-data
 
 # Copy the php.ini file
 COPY apache_files/php.ini /usr/local/etc/php/
+
+# Install intl for Cake
+RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev g++
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-install intl
+
+# Install mysql PDO driver for Cake
+RUN docker-php-ext-install pdo_mysql
+
+# Enable mod_rewrite for Cake to work properly
+RUN a2enmod rewrite
