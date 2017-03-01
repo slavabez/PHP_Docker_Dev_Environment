@@ -44,6 +44,6 @@ Use this project to quickly get started with a new PHP site using Docker contain
 
 ### Coming later: 
 
-* Composer integration - still need to figure out how to add that properly
+* Composer integration - still need to figure out how to add that properly. For now you can use composer on your machine to sync the files, add the --ignore-platform-reqs if needed (E.g. if you want to install SilverStripe 3.4 but you have PHP 7.1 on your machine Composer will refuse to install it as SS 3.4 needs PHP 5.6. Adding the flag will force install it)
 
 * Travis integration
